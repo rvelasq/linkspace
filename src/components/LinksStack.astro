@@ -1,0 +1,40 @@
+---
+import '../styles/gradient.css';
+import { Icon } from 'astro-icon/components';
+import type { LinksConfig } from '../types/config';
+
+interface Props {
+    config: LinksConfig;
+}
+
+const { fullName, bio = '', avatar = '', links = [], socials = [] }: LinksConfig = Astro.props.config;
+
+---
+
+<div class="container">
+    <div class="profile">
+        {avatar && <img src={avatar} alt="Profile" class="avatar" />}
+        <h1 class="name">{fullName}</h1>
+        <p class="bio">{bio}</p>
+    </div>
+    
+    <div class="links">
+        {
+            links.map(( link ) => (
+            <a href={link.url} class="link">
+                {link.title}
+            </a>
+            ))
+        }
+    </div>
+    
+    <div class="social-links">
+        {
+            socials.map(( social ) => (
+            <a href="#" aria-label={social.title}>
+                <Icon name={social.icon} class="social-icon" />
+            </a>
+            ))
+        }
+    </div>
+</div>
