@@ -1,0 +1,57 @@
+---
+// src/components/GradientLinksStack.astro
+import { Icon } from 'astro-icon/components';
+import type { LinksConfig } from '../../types/config';
+
+interface Props {
+    config: LinksConfig;
+}
+
+const { fullName, bio = '', avatar = '', links = [], socials = [] }: LinksConfig = Astro.props.config;
+
+// Custom background gradient using Tailwind utilities
+const bgGradient = 'bg-gradient-to-br from-[#667eea] to-[#764ba2]';
+---
+
+<div class={`min-h-screen ${bgGradient} p-8`}>
+    <div class="container mx-auto max-w-xl">
+        <!-- Profile Section -->
+        <div class="text-center mb-8">
+            <div class="avatar mb-4">
+                <div class="w-32 h-32 rounded-full ring ring-white ring-offset-base-100 ring-offset-2">
+                    <img src={avatar || "https://i.pravatar.cc/128?img=3"} alt={fullName} />
+                </div>
+            </div>
+            <h1 class="text-2xl font-bold text-white mb-2">{fullName}</h1>
+            {bio && <p class="text-white/80 mb-8">{bio}</p>}
+        </div>
+
+        <!-- Links Section -->
+        <div class="flex flex-col gap-4">
+            {links.map(link => (
+                <a 
+                    href={link.url}
+                    class="btn bg-white/90 hover:bg-white text-gray-700 normal-case font-medium transform hover:-translate-y-0.5 transition-all"
+                >
+                    {link.icon && (
+                        <Icon name={link.icon} class="w-5 h-5 mr-2" />
+                    )}
+                    {link.title}
+                </a>
+            ))}
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex justify-center gap-4 mt-8">
+            {socials.map(social => (
+                <a 
+                    href={social.url}
+                    class="text-white hover:text-white/80 transition-colors"
+                    aria-label={social.title}
+                >
+                    <Icon name={social.icon} class="w-6 h-6" />
+                </a>
+            ))}
+        </div>
+    </div>
+</div>

@@ -1,13 +1,18 @@
 ---
-import LinksPopover from '../components/LinksPopover.astro';
-import LinksStack from '../components/LinksStack.astro';
+
+import AllStars from '@components/themes/AllStars.astro';
 import LinkTreeLayout from '../layouts/LinkTreeLayout.astro';
 
 import { getConfig } from '../libs/config';
+import BusinessCard from '@components/themes/BusinessCard.astro';
+import Disco from '@components/themes/Disco.astro';
 
 const config = getConfig();
+
 ---
 
-<LinkTreeLayout title="Your Name - Links">
-	<LinksStack config={config} />
+<LinkTreeLayout page={config.page}>
+	{config.theme === 'all-stars' && <AllStars config={config} />}
+	{config.theme === 'business-card' && <BusinessCard config={config} />}
+	{config.theme === 'disco' && <Disco config={config} />}
 </LinkTreeLayout>

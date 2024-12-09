@@ -4,6 +4,7 @@ export default {
 	theme: {
 		extend: {},
 	},
+	safelist: 'prose prose-sm m-auto animate-spin animate-bounce animate-ping animate-pulse',
 	daisyui: {
 		themes: ['garden'],
 	},
