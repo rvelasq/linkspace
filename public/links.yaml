@@ -1,0 +1,36 @@
+fullName: John Doe
+bio: Full-stack developer & open source enthusiast
+theme: 'disco'
+bgImage: /backgrounds/nicholas-ergemla-NIZvtxMVjWk-unsplash.jpg
+location: New York, USA
+avatar: https://i.pravatar.cc/128
+page: 
+  title: John Doe | Full-stack Developer
+  description: Full-stack developer & open source enthusiast
+  keywords: full-stack, developer, open source, enthusiast
+links:
+  - title: Facebook
+    url: https://facebook.com
+    icon: facebook
+    color: '#3b5998'
+    classes: 'btn-primary'
+  - title: Instagram
+    url: https://instagram.com
+    icon: mdi:instagram
+    color: '#e4405f'
+    classes: 'animate-shake'
+  - title: YouTube
+    url: https://youtube.com
+    icon: youtube
+    color: '#e74c3c'
+    classes: 'btn-danger'
+socials:
+  - title: Twitter
+    url: https://twitter.com
+    icon: mdi:twitter
+  - title: GitHub
+    url: https://github.com
+    icon: mdi:github
+  - title: LinkedIn
+    url: https://linkedin.com
+    icon: mdi:linkedin

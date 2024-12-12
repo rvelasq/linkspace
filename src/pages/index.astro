@@ -1,13 +1,13 @@
 ---
-
+import yaml from 'js-yaml';
 import AllStars from '@components/themes/AllStars.astro';
 import LinkTreeLayout from '../layouts/LinkTreeLayout.astro';
 
-import { getConfig } from '../libs/config';
 import BusinessCard from '@components/themes/BusinessCard.astro';
 import Disco from '@components/themes/Disco.astro';
+import { loadLinksConfig } from '@/libs/links';
 
-const config = getConfig();
+const config = await loadLinksConfig(Astro.url);
 
 ---
 
