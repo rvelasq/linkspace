@@ -27,7 +27,7 @@ npm install
 
 3. Create your configuration file:
 ```bash
-cp src/config/links.example.yaml src/config/links.yaml
+cp src/config/links.example.yaml public/links.yaml
 ```
 
 4. Start the development server:
@@ -37,12 +37,17 @@ npm run dev
 
 ##  Docker 
 
-> [!WARNING]
-will be added soon
+Docker image is available on GitHub Container Registry. You can run the image with the following command:
+
+```bash
+docker run -p 4321:4321 -v ./links.yaml:/app/dist/client/links.yaml ghcr.io/seindigital/linkspace:latest
+```
+
+Replace `./links.yaml` with the path to your configuration file. Server will be available at `http://localhost:4321`.
 
 ## ⚙️ Configuration
 
-The project uses YAML for configuration. Create your `src/config/links.yaml` file with the following structure:
+The project uses YAML for configuration. Create your `public/links.yaml` file with the following structure:
 
 ```yaml
 fullName: Your Name
@@ -60,6 +65,8 @@ socials:
     url: https://twitter.com/username
     icon: mdi:twitter
 ```
+
+You can also check example file in the repository: [public/links.yaml](https://github.com/SeinDigital/linkspace/blob/main/public/links.yaml).
 
 ### Configuration Options
 
@@ -107,7 +114,7 @@ Astro Icons supports multiple icon sets, including Material Design Icons, FontAw
    - Card-based layout
 
 ![docs/themes/businesscard](docs/themes/card.png)
-3. Business Card Theme (`business-card`)
+3. Business Card Theme (`card`)
    - Minimalistic design
    - Background image support
    - Icon support
