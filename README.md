@@ -16,7 +16,7 @@ A customizable, self-hosted alternative to link-in-bio services built with Astro
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/SeinDigital/linkspace.git
+git clone https://github.com/TheDigitalBlaze/linkspace.git
 cd linkspace
 ```
 
@@ -40,7 +40,7 @@ npm run dev
 Docker image is available on GitHub Container Registry. You can run the image with the following command:
 
 ```bash
-docker run -p 4321:4321 -v ./links.yaml:/app/dist/client/links.yaml ghcr.io/seindigital/linkspace:latest
+docker run -p 4321:4321 -v ./links.yaml:/app/dist/client/links.yaml ghcr.io/thedigitalblaze/linkspace:latest
 ```
 
 Replace `./links.yaml` with the path to your configuration file. Server will be available at `http://localhost:4321`.
@@ -66,7 +66,7 @@ socials:
     icon: mdi:twitter
 ```
 
-You can also check example file in the repository: [public/links.yaml](https://github.com/SeinDigital/linkspace/blob/main/public/links.yaml).
+You can also check example file in the repository: [public/links.yaml](https://github.com/TheDigitalBlaze/linkspace/blob/main/public/links.yaml).
 
 ### Configuration Options
 
@@ -176,7 +176,7 @@ npm run build
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](https://github.com/SeinDigital/linkspace/issues) page
+1. Check the [Issues](https://github.com/TheDigitalBlaze/linkspace/issues) page
 2. Create a new issue with detailed information about your problem
 3. Provide steps to reproduce the issue
 
