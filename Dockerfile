@@ -1,4 +1,9 @@
 FROM node:22-alpine
+LABEL org.opencontainers.image.authors="dev@velasq.com"
+LABEL org.opencontainers.image.description="A customizable, self-hosted alternative to link-in-bio services."
+LABEL org.opencontainers.image.url="https://github.com/rvelasq/linkspace"
+LABEL org.opencontainers.image.source=https://github.com/rvelasq/linkspace
+
 WORKDIR /app
 COPY ./ /app
 RUN npm install && npm run build
